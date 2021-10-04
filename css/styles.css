@@ -166,6 +166,8 @@ img {
 
 /*-------------------------- Navigation-------------- */
 .site-nav-link {
+  position: relative;
+
   display: block;
   color: var(--text-title-color);
   font-weight: 500;
@@ -173,6 +175,8 @@ img {
   text-decoration: none;
   padding-top: 32px;
   padding-bottom: 32px;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-nav-item:not(:last-child) {
@@ -187,11 +191,33 @@ img {
 .site-nav-link.current {
   color: var(--accent-color);
 }
+.site-nav-link::after {
+  content: '';
+
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+
+  display: block;
+  width: 0%;
+  height: 4px;
+  background: var(--accent-color);
+  border-radius: 2px;
+
+  opacity: 0;
+}
+.site-nav-link.current::after {
+  opacity: 1;
+  width: 100%;
+}
+
 .envelope {
   display: inline-block;
   align-items: center;
   margin-right: 10px;
   fill: var(--text-prime-color);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .connect-header {
@@ -212,6 +238,8 @@ img {
   text-decoration: none;
   padding-top: 32px;
   padding-bottom: 32px;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .connect-header-link:hover .envelope,
 .connect-header-link:focus .envelope,
@@ -264,6 +292,8 @@ img {
   font-weight: 700;
   line-height: 1.88;
   letter-spacing: 0.06em;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn:hover,
@@ -318,6 +348,25 @@ img {
 .service-item:not(:last-child) {
   margin-right: 30px;
 }
+.service-item {
+  position: relative;
+}
+.service-overlay {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+  height: 70px;
+
+  font-weight: 700px;
+  line-height: 1.14;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  color: var(--text-white-color);
+  background-color: rgba(47, 48, 58, 0.8);
+}
 /*------------------------------- team style-------------------------- */
 .team {
   background-color: var(--bg-second-color);
@@ -359,6 +408,8 @@ img {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-shadow:hover,
 .team-shadow:focus {
@@ -385,6 +436,9 @@ img {
   fill: var(--social-netw-color);
   background-color: var(--bg-prime-color);
   border-radius: 50%;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-network:hover,
 .social-network:focus {
@@ -418,6 +472,9 @@ img {
   background-color: var(--bg-prime-color);
   border: 1px solid #afb1b8;
   border-radius: 4px;
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-links:hover,
 .clients-links:focus {
@@ -446,6 +503,11 @@ img {
   line-height: 1.6;
   color: var(--text-title-color);
   border-radius: 4px;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filter-btn:hover,
 .filter-btn:focus {
@@ -468,6 +530,8 @@ img {
 }
 .projekt-link {
   display: block;
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .projekt-link:hover,
 .projekt-link:focus {
@@ -522,6 +586,8 @@ img {
 }
 .connect-footer-mail {
   color: rgba(255, 255, 255, 0.6);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .connect-footer-mail:hover,
 .connect-footer-mail:focus {
